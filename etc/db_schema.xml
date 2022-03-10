@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * AppsGenni.
+ *
+ * @author     Uzair
+ * @copyright  Copyright (c) 2022 AppsGenni. ( http://example.com )
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="lv_password_validation" resource="sales" engine="innodb" comment="Old Password Validation">
+        <column xsi:type="int" name="entity_id" nullable="false" unsigned="true" identity="true" comment="Entity ID" />
+        <column xsi:type="int" name="customer_id" nullable="false" unsigned="true" comment="Customer ID FK" />
+        <column xsi:type="varchar" name="customer_email" length="255" nullable="true" comment="Customer Email" />
+        <column xsi:type="varchar" name="password_hash" length="128" nullable="true" comment="Password Hash" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="LV_CUSTOMER_PASSWORD_VALIDATION_ID"
+                    table="lv_password_validation" column="customer_id" referenceTable="customer_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE" />
+        <index referenceId="LV_PASSWORD_VALIDATION_CUSTOMER_ID" indexType="btree">
+            <column name="customer_id"/>
+        </index>
+        <index referenceId="LV_PASSWORD_VALIDATION_PASSWORD_HASH" indexType="btree">
+            <column name="password_hash"/>
+        </index>
+        <index referenceId="LV_PASSWORD_VALIDATION_CUSTOMER_EMAIL" indexType="btree">
+            <column name="customer_email"/>
+        </index>
+    </table>
+</schema>

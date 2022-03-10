@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * AppsGenni.
+ *
+ * @author     Uzair
+ * @copyright  Copyright (c) 2022 AppsGenni. ( http://example.com )
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <lv_password_validation>
+            <general>
+                <enable>1</enable>
+            </general>
+        </lv_password_validation>
+    </default>
+</config>

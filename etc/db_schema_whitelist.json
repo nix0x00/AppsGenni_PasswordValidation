@@ -1,0 +1,19 @@
+{
+    "lv_password_validation": {
+        "column": {
+            "entity_id": true,
+            "customer_id": true,
+            "customer_email": true,
+            "password_hash": true
+        },
+        "index": {
+            "LV_PASSWORD_VALIDATION_CUSTOMER_ID": true,
+            "LV_PASSWORD_VALIDATION_PASSWORD_HASH": true,
+            "LV_PASSWORD_VALIDATION_CUSTOMER_EMAIL": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "LV_PASSWORD_VALIDATION_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+        }
+    }
+}
